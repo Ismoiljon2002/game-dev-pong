@@ -11,10 +11,12 @@ public class MainMenu : MonoBehaviour
     public Slider paddleSpeedSlider;
     public Text ballSpeedText;
     public Text paddleSpeedText;
+    public Dropdown hardnessLevelDropdown;
 
 
     public static float ballSpeed;
     public static float paddleSpeed;
+    public static int hardnessLevel;
 
 
     void Start () {
@@ -22,6 +24,7 @@ public class MainMenu : MonoBehaviour
         ballSpeedText.text = string.Format("{0:N1}", ballSpeedSlider.value);
         paddleSpeed = paddleSpeedSlider.value;
         paddleSpeedText.text = string.Format("{0:N1}", ballSpeedSlider.value);
+        hardnessLevel = hardnessLevelDropdown.value;
     }
 
     public void PlaySingleMode () {
@@ -42,17 +45,18 @@ public class MainMenu : MonoBehaviour
         paddleSpeed = newSpeed;
     }
 
+    public void ChangeHardnessLevel () {
+        hardnessLevel = hardnessLevelDropdown.value;
+    }
+
     public void ChangeBallSpeedText() {
-        // ballSpeedSlider.value = ballSpeed;
         ballSpeedText.text = string.Format("{0:N1}", ballSpeedSlider.value);
         UpdateBallSpeed(ballSpeedSlider.value);
 
     }
     public void ChangePaddleSpeedText()
     {
-        // ballSpeedSlider.value = ballSpeed;
         paddleSpeedText.text = string.Format("{0:N1}", paddleSpeedSlider.value);
         UpdatePaddleSpeed(paddleSpeedSlider.value);
-
     }
 }

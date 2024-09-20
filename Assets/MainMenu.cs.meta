@@ -3,7 +3,12 @@ guid: 79e8655c7a9b0e84f8e961f0a23a6113
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ballSpeedSlider: {fileID: 7273109559532648913, guid: bae6be1d725964c4089edf0b4b212bc4, type: 3}
+  - paddleSpeedSlider: {fileID: 3085293621993558026, guid: 36a489e5cba80aa4da7a93223b2e7721, type: 3}
+  - ballSpeedText: {fileID: 3235103135293331085, guid: 0afa34e84a3ee7e4a943adaa9a4f5953, type: 3}
+  - paddleSpeedText: {fileID: 7041844068652342925, guid: e94631c797688e94480eec9dda0a5c46, type: 3}
+  - hardnessLevelDropdown: {fileID: 7105822472043851531, guid: 5945fd3c3df949844af9dd5282f50c15, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

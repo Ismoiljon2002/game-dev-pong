@@ -32,23 +32,27 @@ public class MultiGameController : MonoBehaviour
     private void PaddleBController()
     {
         // Multi player mode
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow)) {   
             playerMovement = new Vector2(0, 1);
-        else if (Input.GetKey(KeyCode.DownArrow))
+        }
+        else if (Input.GetKey(KeyCode.DownArrow)) {
             playerMovement = new Vector2(0, -1);
-        else
+        }
+        else {
             playerMovement = Vector2.zero;
+        }
     }
 
     private void PaddleAController()
     {
         // Multi player mode
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W)) {
             playerMovement = new Vector2(0, 1);
-        else if (Input.GetKey(KeyCode.S))
+        } else if (Input.GetKey(KeyCode.S)) {
             playerMovement = new Vector2(0, -1);
-        else
+        } else {
             playerMovement = Vector2.zero;
+        }
 
     }
 

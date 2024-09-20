@@ -821,9 +821,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6590ed98bf0e2784f9a343bc1daac354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
   isPlayerA: 0
   circle: {fileID: 313861826}
+  paddleASpeed: 0
+  paddleBSpeed: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,9 +1354,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6590ed98bf0e2784f9a343bc1daac354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
   isPlayerA: 1
   circle: {fileID: 313861826}
+  paddleASpeed: 0
+  paddleBSpeed: 0
 --- !u!1 &1624425710
 GameObject:
   m_ObjectHideFlags: 0

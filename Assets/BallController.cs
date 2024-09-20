@@ -19,7 +19,6 @@ public class BallController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         Invoke("StartBall", 2f);
         initialSpeed = MainMenu.ballSpeed;
-        Debug.Log(string.Format("{0:N1}", initialSpeed));
     }
 
     private void FixedUpdate()

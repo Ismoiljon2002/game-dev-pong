@@ -4,17 +4,35 @@ using UnityEngine;
 
 public class SingleGameController : MonoBehaviour
 {
-    public float speed;
     public bool isPlayerA = false;
     public GameObject circle;
     private Rigidbody2D rb;
     private Vector2 playerMovement;
+    public float paddleASpeed;
+    public float paddleBSpeed;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.drag = 2f;
-        speed = MainMenu.paddleSpeed;
+        switch (MainMenu.hardnessLevel)
+        {
+            case 0:
+                paddleBSpeed = 3f;
+                paddleASpeed = 7f;
+                break;
+            case 1:
+                paddleBSpeed = 5f;
+                paddleASpeed = 5f;
+                break;
+            case 2:
+                paddleBSpeed = 15f;
+                paddleASpeed = 5f;
+                break;
+            default:
+                Debug.Log(MainMenu.hardnessLevel + " is shown in default");
+                break;
+        }
     }
 
     void Update()
@@ -31,12 +49,15 @@ public class SingleGameController : MonoBehaviour
 
     private void PaddleBController()
     {
-        if (circle.transform.position.y > transform.position.y + 0.5f)
+        if (circle.transform.position.y > transform.position.y + 0.5f) {
             playerMovement = new Vector2(0, 1);
-        else if (circle.transform.position.y < transform.position.y - 0.5f)
+        }
+        else if (circle.transform.position.y < transform.position.y - 0.5f) {
             playerMovement = new Vector2(0, -1);
-        else
+        }
+        else {
             playerMovement = new Vector2(0, 0);
+        }
     }
 
     private void PaddleAController()
@@ -44,8 +65,12 @@ public class SingleGameController : MonoBehaviour
         playerMovement = new Vector2(0, Input.GetAxis("Vertical"));
     }
 
-    private void FixedUpdate()
-    {
-        rb.velocity = playerMovement * speed;
+
+    private void FixedUpdate(){
+        if (isPlayerA) 
+            rb.velocity = playerMovement * paddleASpeed;
+        else
+            rb.velocity = playerMovement * paddleBSpeed;
     }
+
 }
