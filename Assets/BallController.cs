@@ -90,7 +90,7 @@ public class BallController : MonoBehaviour
         if (transform.position.x > 0)
         {
             RestartBall();
-            opponentText.text = (int.Parse(opponentText.text) + 1).ToString();
+            playerText.text = (int.Parse(playerText.text) + 1).ToString();
         }
         else if (transform.position.x < 0)
         {
