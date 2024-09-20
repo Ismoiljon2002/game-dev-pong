@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class BallController : MonoBehaviour
 {
-    public float initialSpeed = 10f;
+    public float initialSpeed;
     public float speedIncrease = 0.2f;
     public Text playerText; 
     public Text opponentText; 
@@ -17,6 +18,8 @@ public class BallController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         Invoke("StartBall", 2f);
+        initialSpeed = MainMenu.ballSpeed;
+        Debug.Log(string.Format("{0:N1}", initialSpeed));
     }
 
     private void FixedUpdate()
@@ -75,12 +78,6 @@ public class BallController : MonoBehaviour
 
             rb.velocity = new Vector2(xDirection, yDirection) * (initialSpeed + (speedIncrease * hitCounter));
 
-
-            // Vector2 bounceDirection = Vector2.Reflect(rb.velocity.normalized, other.contacts[0].normal);
-            // rb.velocity = bounceDirection * (initialSpeed + (speedIncrease * hitCounter));
-
-
-
             Destroy(other.gameObject);
         }
     }
@@ -97,11 +94,5 @@ public class BallController : MonoBehaviour
             RestartBall();
             opponentText.text = (int.Parse(opponentText.text) + 1).ToString();
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // Your update logic here, if needed
     }
 }
